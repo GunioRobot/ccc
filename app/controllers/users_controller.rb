@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   #
   def create
     @user = User.new(params[:user])
-    
+
     if @user.save
       if @user.respond_to?(:confirm!)
         flash[:success] = t('devise.confirmations.send_instructions')
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @user = current_user
   end
